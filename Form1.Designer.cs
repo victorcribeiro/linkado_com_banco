@@ -86,14 +86,14 @@
             // logonToolStripMenuItem
             // 
             this.logonToolStripMenuItem.Name = "logonToolStripMenuItem";
-            this.logonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logonToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.logonToolStripMenuItem.Text = "logon";
             this.logonToolStripMenuItem.Click += new System.EventHandler(this.logonToolStripMenuItem_Click);
             // 
             // logoofToolStripMenuItem
             // 
             this.logoofToolStripMenuItem.Name = "logoofToolStripMenuItem";
-            this.logoofToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoofToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.logoofToolStripMenuItem.Text = "logoof";
             // 
             // usuáriosToolStripMenuItem
@@ -241,9 +241,11 @@
             // 
             // pictureBox_login
             // 
-            this.pictureBox_login.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox_login.Image = global::ProjetoEscola1.Properties.Resources.bvermelha;
+            this.pictureBox_login.Location = new System.Drawing.Point(12, 12);
             this.pictureBox_login.Name = "pictureBox_login";
             this.pictureBox_login.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox_login.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_login.TabIndex = 0;
             this.pictureBox_login.TabStop = false;
             // 
@@ -320,11 +322,11 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox_login;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.PictureBox pictureBox_login;
     }
 }
 

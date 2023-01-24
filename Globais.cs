@@ -15,8 +15,8 @@ namespace ProjetoEscola1
         //Estrutura para criar um caminho relativo no Banco de dados
         // O caminho relativo "System.Evironment.CurrentDirecto" leva até bin/debug
         public static string caminho = System.Environment.CurrentDirectory;
-        public static string nomeBanco = "banco_de_dados_escola";
-        public static string caminhoBanco = caminho + "\\banco de dados\\" + nomeBanco;
+        public static string nomeBanco = "banco_de_dados_escola.db";
+        public static string caminhoBanco = caminho + "\\banco\\" + nomeBanco;
 
     }
 }

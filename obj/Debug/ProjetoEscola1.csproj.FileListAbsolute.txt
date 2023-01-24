@@ -3,7 +3,6 @@ C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\bin\Debug\ProjetoEscola1.ex
 C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\bin\Debug\ProjetoEscola1.pdb
 C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.csproj.AssemblyReference.cache
 C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.csproj.SuggestedBindingRedirects.cache
-C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.Form1.resources
 C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.Properties.Resources.resources
 C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.csproj.GenerateResource.cache
 C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.csproj.CoreCompileInputs.cache
