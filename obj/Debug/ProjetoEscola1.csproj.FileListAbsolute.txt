@@ -19,3 +19,4 @@ C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\bin\Debug\EntityFramework.S
 C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\bin\Debug\System.Data.SQLite.xml
 C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.csproj.CopyComplete
 C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.F_escola.resources
+C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.F_novouser.resources

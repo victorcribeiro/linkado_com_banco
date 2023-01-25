@@ -15,6 +15,8 @@ namespace ProjetoEscola1
         public F_escola()
         {
             InitializeComponent();
+            F_Login f_Login = new F_Login(this);
+            f_Login.ShowDialog();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -27,5 +29,11 @@ namespace ProjetoEscola1
             F_Login f_Login= new F_Login(this);
             f_Login.ShowDialog();
         }
-    }
+
+        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_novouser f_novouser = new F_novouser();
+            f_novouser.ShowDialog();
+        }
+    } 
 }

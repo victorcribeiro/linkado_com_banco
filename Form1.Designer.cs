@@ -52,10 +52,10 @@
             this.visualizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox_login = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox_login = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_login)).BeginInit();
@@ -86,14 +86,14 @@
             // logonToolStripMenuItem
             // 
             this.logonToolStripMenuItem.Name = "logonToolStripMenuItem";
-            this.logonToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.logonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logonToolStripMenuItem.Text = "logon";
             this.logonToolStripMenuItem.Click += new System.EventHandler(this.logonToolStripMenuItem_Click);
             // 
             // logoofToolStripMenuItem
             // 
             this.logoofToolStripMenuItem.Name = "logoofToolStripMenuItem";
-            this.logoofToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.logoofToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoofToolStripMenuItem.Text = "logoof";
             // 
             // usuáriosToolStripMenuItem
@@ -111,29 +111,30 @@
             // novoToolStripMenuItem
             // 
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoToolStripMenuItem.Text = "Novo";
+            this.novoToolStripMenuItem.Click += new System.EventHandler(this.novoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // gerenciamentoToolStripMenuItem
             // 
             this.gerenciamentoToolStripMenuItem.Name = "gerenciamentoToolStripMenuItem";
-            this.gerenciamentoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.gerenciamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gerenciamentoToolStripMenuItem.Text = "Gerenciamento";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // visualizarToolStripMenuItem
             // 
             this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
-            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.visualizarToolStripMenuItem.Text = "Visualizar";
             // 
             // alunosToolStripMenuItem
@@ -237,17 +238,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(13, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "--";
-            // 
-            // pictureBox_login
-            // 
-            this.pictureBox_login.Image = global::ProjetoEscola1.Properties.Resources.bvermelha;
-            this.pictureBox_login.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox_login.Name = "pictureBox_login";
-            this.pictureBox_login.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox_login.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_login.TabIndex = 0;
-            this.pictureBox_login.TabStop = false;
+            this.label4.Text = "7";
             // 
             // label3
             // 
@@ -276,6 +267,16 @@
             this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "--";
+            // 
+            // pictureBox_login
+            // 
+            this.pictureBox_login.Image = global::ProjetoEscola1.Properties.Resources.bvermelha;
+            this.pictureBox_login.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox_login.Name = "pictureBox_login";
+            this.pictureBox_login.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox_login.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_login.TabIndex = 0;
+            this.pictureBox_login.TabStop = false;
             // 
             // F_escola
             // 
