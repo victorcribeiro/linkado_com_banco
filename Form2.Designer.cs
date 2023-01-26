@@ -36,13 +36,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nud_nivel = new System.Windows.Forms.NumericUpDown();
             this.tb_nome = new System.Windows.Forms.TextBox();
             this.tb_username = new System.Windows.Forms.TextBox();
             this.tb_senha = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cb_status = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_nivel)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -98,6 +98,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Limpar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -119,12 +120,12 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // numericUpDown1
+            // nud_nivel
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(238, 245);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 8;
+            this.nud_nivel.Location = new System.Drawing.Point(238, 245);
+            this.nud_nivel.Name = "nud_nivel";
+            this.nud_nivel.Size = new System.Drawing.Size(120, 20);
+            this.nud_nivel.TabIndex = 8;
             // 
             // tb_nome
             // 
@@ -178,7 +179,7 @@
             this.Controls.Add(this.tb_senha);
             this.Controls.Add(this.tb_username);
             this.Controls.Add(this.tb_nome);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nud_nivel);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -189,7 +190,7 @@
             this.Controls.Add(this.label1);
             this.Name = "F_novouser";
             this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_nivel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,7 +206,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nud_nivel;
         private System.Windows.Forms.TextBox tb_nome;
         private System.Windows.Forms.TextBox tb_username;
         private System.Windows.Forms.TextBox tb_senha;
