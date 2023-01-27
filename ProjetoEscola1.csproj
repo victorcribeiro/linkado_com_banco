@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aluno.cs" />
     <Compile Include="Banco_de_dados.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Curso.cs" />
@@ -86,13 +87,26 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Aluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Aluno.Designer.cs">
+      <DependentUpon>F_Aluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_Login.Designer.cs">
       <DependentUpon>F_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_professor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_professor.Designer.cs">
+      <DependentUpon>F_professor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Globais.cs" />
+    <Compile Include="Professor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
@@ -105,8 +119,14 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_Aluno.resx">
+      <DependentUpon>F_Aluno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_professor.resx">
+      <DependentUpon>F_professor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

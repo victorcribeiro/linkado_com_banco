@@ -21,3 +21,5 @@ C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.cs
 C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.F_escola.resources
 C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.F_novouser.resources
 C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.F_novocurso.resources
+C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.F_novoprofessor.resources
+C:\Users\victor.cribeiro\source\repos\ProjetoEscola1\obj\Debug\ProjetoEscola1.F_Aluno.resources

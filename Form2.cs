@@ -39,7 +39,7 @@ namespace ProjetoEscola1
             usuario.nivel_usuario = Convert.ToInt32(Math.Round(nud_nivel.Value, 0));
             Banco_de_dados.NovoUser(usuario);
 
-
+              
 
 
         }

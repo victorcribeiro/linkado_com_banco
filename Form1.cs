@@ -41,5 +41,17 @@ namespace ProjetoEscola1
             F_novocurso f_novocurso = new F_novocurso();
             f_novocurso.ShowDialog();
         }
+
+        private void novoToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            F_novoprofessor f_novoprofessor = new F_novoprofessor();
+            f_novoprofessor.ShowDialog();
+        }
+
+        private void novoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            F_Aluno f_novoaluno = new F_Aluno();
+            f_novoaluno.ShowDialog();
+        }
     } 
 }
