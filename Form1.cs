@@ -53,5 +53,16 @@ namespace ProjetoEscola1
             F_Aluno f_novoaluno = new F_Aluno();
             f_novoaluno.ShowDialog();
         }
+
+        private void gerenciarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void gerenciamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_gerenciaamentouser f_gerenciamentouser = new F_gerenciaamentouser();
+            f_gerenciamentouser.ShowDialog();
+        }
     } 
 }

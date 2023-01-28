@@ -127,8 +127,9 @@
             // gerenciamentoToolStripMenuItem
             // 
             this.gerenciamentoToolStripMenuItem.Name = "gerenciamentoToolStripMenuItem";
-            this.gerenciamentoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.gerenciamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gerenciamentoToolStripMenuItem.Text = "Gerenciamento";
+            this.gerenciamentoToolStripMenuItem.Click += new System.EventHandler(this.gerenciamentoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -170,6 +171,7 @@
             this.gerenciarToolStripMenuItem1.Name = "gerenciarToolStripMenuItem1";
             this.gerenciarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.gerenciarToolStripMenuItem1.Text = "Gerenciar";
+            this.gerenciarToolStripMenuItem1.Click += new System.EventHandler(this.gerenciarToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem6
             // 

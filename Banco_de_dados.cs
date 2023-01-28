@@ -8,6 +8,7 @@ using System.Data.SQLite;
 using System.Windows.Forms;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography.X509Certificates;
+using System.Linq.Expressions;
 
 namespace ProjetoEscola1
 {
@@ -364,6 +365,40 @@ namespace ProjetoEscola1
 
             }
 
+        public static DataTable ObterUserID()
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT id_usuario AS ID, nome_usuario AS Nome FROM tb_usuario";
+
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                //o Data adapter abaixo preeche o DataTable com as infomações retornadas do banco de dados
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+            }    
+            
+            catch (Exception ex)
+             {
+               throw ex; 
+
+                }
+            }
         }
 
-   } 
+
+
+
+
+
+
+
+    }
+
+
+   
