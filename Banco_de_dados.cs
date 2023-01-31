@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography.X509Certificates;
 using System.Linq.Expressions;
+using System.Drawing;
 
 namespace ProjetoEscola1
 {
@@ -107,263 +108,263 @@ namespace ProjetoEscola1
 
 
 
-            public static void NovoUser(Usuario user)
+        public static void NovoUser(Usuario user)
+        {
+            if (UsernameExiste(user) == true)
             {
-                if (UsernameExiste(user) == true)
-                {
-                    MessageBox.Show("Usuario já existe no sistema");
-                    return;
-                }
-                //Rotina para inserção do novo usuário no banco de dados
-
-                try
-                {
-                    var vcon = ConectarBanco();
-                    var cmd = vcon.CreateCommand();
-                    //Parametros conforme a tabela do banco de dados
-                    cmd.CommandText = "INSERT INTO tb_usuario (nome_usuario, username_usuario,senha_usuario,status_usuario,nivel_usuario) Values(@nome,@username,@senha,@status,@nivel)";
-                    //cmd.Command.Text = "INSERT INTO tb_usuarios VALUES (null, 'maria', 'maria', '1234','A','3')
-
-                    cmd.Parameters.AddWithValue("@nome", user.nome_usuario);
-                    cmd.Parameters.AddWithValue("@username", user.username_usuario);
-                    cmd.Parameters.AddWithValue("@senha", user.senha_usuario);
-                    cmd.Parameters.AddWithValue("@status", user.status_usuario);
-                    cmd.Parameters.AddWithValue("@nivel", user.nivel_usuario);
-
-                    cmd.ExecuteNonQuery();
-                    vcon.Close();
-                    MessageBox.Show("Novo usuário adicionado com sucesso");
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao inserir no usuário .: " + ex.Message);
-                    //throw ex
-                }
-
+                MessageBox.Show("Usuario já existe no sistema");
+                return;
             }
+            //Rotina para inserção do novo usuário no banco de dados
 
-            public static bool UsernameExiste(Usuario user)
+            try
             {
-                bool resposta;
-                SQLiteDataAdapter da = null;
-                DataTable dt = new DataTable();
-
                 var vcon = ConectarBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "SELECT username_usuario FROM tb_usuario WHERE username_usuario ='" + user.username_usuario + "'";
+                //Parametros conforme a tabela do banco de dados
+                cmd.CommandText = "INSERT INTO tb_usuario (nome_usuario, username_usuario,senha_usuario,status_usuario,nivel_usuario) Values(@nome,@username,@senha,@status,@nivel)";
+                //cmd.Command.Text = "INSERT INTO tb_usuarios VALUES (null, 'maria', 'maria', '1234','A','3')
 
-                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
-                //O Data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    resposta = true;
-                }
-                else
-                {
-                    resposta = false;
-                }
+                cmd.Parameters.AddWithValue("@nome", user.nome_usuario);
+                cmd.Parameters.AddWithValue("@username", user.username_usuario);
+                cmd.Parameters.AddWithValue("@senha", user.senha_usuario);
+                cmd.Parameters.AddWithValue("@status", user.status_usuario);
+                cmd.Parameters.AddWithValue("@nivel", user.nivel_usuario);
 
+                cmd.ExecuteNonQuery();
                 vcon.Close();
-                return resposta;
-
+                MessageBox.Show("Novo usuário adicionado com sucesso");
             }
 
-            public static void NovoCurso(Curso curso)
+            catch (Exception ex)
             {
-                if (CursoExiste(curso) == true)
-                {
-                    MessageBox.Show("Este curso já existe no sistema");
-                    return;
-                }
-                //Rotina para inserção do novo usuário no banco de dados
-
-                try
-                {
-                    var vcon = ConectarBanco();
-                    var cmd = vcon.CreateCommand();
-                    //Parametros conforme a tabela do banco de dados
-                    cmd.CommandText = "INSERT INTO tb_curso (id_curso, nome_curso,area_curso,status_curso) Values(@id,@nome,@area,@status)";
-                    //cmd.Command.Text = "INSERT INTO tb_usuarios VALUES (null, 'maria', 'maria', '1234','A','3')
-
-                    cmd.Parameters.AddWithValue("@id", curso.id_curso);
-                    cmd.Parameters.AddWithValue("@nome", curso.nome_curso);
-                    cmd.Parameters.AddWithValue("@area", curso.area_curso);
-                    cmd.Parameters.AddWithValue("@status", curso.status_curso);
-
-
-                    cmd.ExecuteNonQuery();
-                    vcon.Close();
-                    MessageBox.Show("Novo curso adicionado com sucesso");
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao inserir no curso .: " + ex.Message);
-                    //throw ex
-                }
-
+                MessageBox.Show("Erro ao inserir no usuário .: " + ex.Message);
+                //throw ex
             }
 
-            public static bool CursoExiste(Curso curso)
-            {
-                bool resposta;
-                SQLiteDataAdapter da = null;
-                DataTable dt = new DataTable();
+        }
 
+        public static bool UsernameExiste(Usuario user)
+        {
+            bool resposta;
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            var vcon = ConectarBanco();
+            var cmd = vcon.CreateCommand();
+            cmd.CommandText = "SELECT username_usuario FROM tb_usuario WHERE username_usuario ='" + user.username_usuario + "'";
+
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+            //O Data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                resposta = true;
+            }
+            else
+            {
+                resposta = false;
+            }
+
+            vcon.Close();
+            return resposta;
+
+        }
+
+        public static void NovoCurso(Curso curso)
+        {
+            if (CursoExiste(curso) == true)
+            {
+                MessageBox.Show("Este curso já existe no sistema");
+                return;
+            }
+            //Rotina para inserção do novo usuário no banco de dados
+
+            try
+            {
                 var vcon = ConectarBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "SELECT nome_curso FROM tb_curso WHERE nome_curso ='" + curso.nome_curso + "'";
+                //Parametros conforme a tabela do banco de dados
+                cmd.CommandText = "INSERT INTO tb_curso (id_curso, nome_curso,area_curso,status_curso) Values(@id,@nome,@area,@status)";
+                //cmd.Command.Text = "INSERT INTO tb_usuarios VALUES (null, 'maria', 'maria', '1234','A','3')
 
-                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
-                //O Data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    resposta = true;
-                }
-                else
-                {
-                    resposta = false;
-                }
+                cmd.Parameters.AddWithValue("@id", curso.id_curso);
+                cmd.Parameters.AddWithValue("@nome", curso.nome_curso);
+                cmd.Parameters.AddWithValue("@area", curso.area_curso);
+                cmd.Parameters.AddWithValue("@status", curso.status_curso);
 
+
+                cmd.ExecuteNonQuery();
                 vcon.Close();
-                return resposta;
-
+                MessageBox.Show("Novo curso adicionado com sucesso");
             }
 
-            public static void NovoProfessor(Professor professor)
+            catch (Exception ex)
             {
-                if (ProfessorExiste(professor) == true)
-                {
-                    MessageBox.Show("Este professor já existe no sistema");
-                    return;
-                }
-                //Rotina para inserção do novo usuário no banco de dados
-
-                try
-                {
-                    var vcon = ConectarBanco();
-                    var cmd = vcon.CreateCommand();
-                    //Parametros conforme a tabela do banco de dados
-                    cmd.CommandText = "INSERT INTO tb_professor (id_professor, nome_professor,contato_professor,status_professor, cpf_professor) Values(@id,@nome,@contato,@status,@cpf)";
-
-
-                    cmd.Parameters.AddWithValue("@id", professor.id_professor);
-                    cmd.Parameters.AddWithValue("@nome", professor.nome_professor);
-                    cmd.Parameters.AddWithValue("@contato", professor.contato_professor);
-                    cmd.Parameters.AddWithValue("@status", professor.status_professor);
-                    cmd.Parameters.AddWithValue("@cpf", professor.cpf_professor);
-
-
-
-                    cmd.ExecuteNonQuery();
-                    vcon.Close();
-                    MessageBox.Show("Novo professor adicionado com sucesso");
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao inserir professor .: " + ex.Message);
-                    //throw ex
-                }
-
+                MessageBox.Show("Erro ao inserir no curso .: " + ex.Message);
+                //throw ex
             }
 
-            public static bool ProfessorExiste(Professor professor)
-            {
-                bool resposta;
-                SQLiteDataAdapter da = null;
-                DataTable dt = new DataTable();
+        }
 
+        public static bool CursoExiste(Curso curso)
+        {
+            bool resposta;
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            var vcon = ConectarBanco();
+            var cmd = vcon.CreateCommand();
+            cmd.CommandText = "SELECT nome_curso FROM tb_curso WHERE nome_curso ='" + curso.nome_curso + "'";
+
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+            //O Data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                resposta = true;
+            }
+            else
+            {
+                resposta = false;
+            }
+
+            vcon.Close();
+            return resposta;
+
+        }
+
+        public static void NovoProfessor(Professor professor)
+        {
+            if (ProfessorExiste(professor) == true)
+            {
+                MessageBox.Show("Este professor já existe no sistema");
+                return;
+            }
+            //Rotina para inserção do novo usuário no banco de dados
+
+            try
+            {
                 var vcon = ConectarBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "SELECT cpf_professor FROM tb_professor WHERE cpf_professor ='" + professor.cpf_professor + "'";
+                //Parametros conforme a tabela do banco de dados
+                cmd.CommandText = "INSERT INTO tb_professor (id_professor, nome_professor,contato_professor,status_professor, cpf_professor) Values(@id,@nome,@contato,@status,@cpf)";
 
-                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
-                //O Data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    resposta = true;
-                }
-                else
-                {
-                    resposta = false;
-                }
 
+                cmd.Parameters.AddWithValue("@id", professor.id_professor);
+                cmd.Parameters.AddWithValue("@nome", professor.nome_professor);
+                cmd.Parameters.AddWithValue("@contato", professor.contato_professor);
+                cmd.Parameters.AddWithValue("@status", professor.status_professor);
+                cmd.Parameters.AddWithValue("@cpf", professor.cpf_professor);
+
+
+
+                cmd.ExecuteNonQuery();
                 vcon.Close();
-                return resposta;
-
+                MessageBox.Show("Novo professor adicionado com sucesso");
             }
 
-
-            public static void NovoAluno(Aluno aluno)
+            catch (Exception ex)
             {
-                if (AlunoExiste(aluno) == true)
-                {
-                    MessageBox.Show("Este aluno já existe no sistema");
-                    return;
-                }
-                //Rotina para inserção do novo usuário no banco de dados
+                MessageBox.Show("Erro ao inserir professor .: " + ex.Message);
+                //throw ex
+            }
 
-                try
-                {
-                    var vcon = ConectarBanco();
-                    var cmd = vcon.CreateCommand();
-                    //Parametros conforme a tabela do banco de dados
-                    cmd.CommandText = "INSERT INTO tb_aluno (id_aluno, nome_aluno,contato_aluno,status_aluno,cpf_aluno) Values(@id,@nome,@contato,@status,@cpf)";
+        }
 
+        public static bool ProfessorExiste(Professor professor)
+        {
+            bool resposta;
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
 
-                    cmd.Parameters.AddWithValue("@id", aluno.id_aluno);
-                    cmd.Parameters.AddWithValue("@nome", aluno.nome_aluno);
-                    cmd.Parameters.AddWithValue("@contato", aluno.contato_aluno);
-                    cmd.Parameters.AddWithValue("@status", aluno.status_aluno);
-                    cmd.Parameters.AddWithValue("@cpf", aluno.cpf_aluno);
+            var vcon = ConectarBanco();
+            var cmd = vcon.CreateCommand();
+            cmd.CommandText = "SELECT cpf_professor FROM tb_professor WHERE cpf_professor ='" + professor.cpf_professor + "'";
 
-
-
-                    cmd.ExecuteNonQuery();
-                    vcon.Close();
-                    MessageBox.Show("Novo aluno adicionado com sucesso");
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao inserir aluno: " + ex.Message);
-                    //throw ex
-                }
-
-
-            } // Fim do metodo novoaluno
-
-            public static bool AlunoExiste(Aluno aluno)
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+            //O Data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
             {
-                bool resposta;
-                SQLiteDataAdapter da = null;
-                DataTable dt = new DataTable();
+                resposta = true;
+            }
+            else
+            {
+                resposta = false;
+            }
 
+            vcon.Close();
+            return resposta;
+
+        }
+
+
+        public static void NovoAluno(Aluno aluno)
+        {
+            if (AlunoExiste(aluno) == true)
+            {
+                MessageBox.Show("Este aluno já existe no sistema");
+                return;
+            }
+            //Rotina para inserção do novo usuário no banco de dados
+
+            try
+            {
                 var vcon = ConectarBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "SELECT cpf_aluno FROM tb_aluno WHERE cpf_aluno ='" + aluno.cpf_aluno + "'";
+                //Parametros conforme a tabela do banco de dados
+                cmd.CommandText = "INSERT INTO tb_aluno (id_aluno, nome_aluno,contato_aluno,status_aluno,cpf_aluno) Values(@id,@nome,@contato,@status,@cpf)";
 
-                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
-                //O Data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    resposta = true;
-                }
-                else
-                {
-                    resposta = false;
-                }
 
+                cmd.Parameters.AddWithValue("@id", aluno.id_aluno);
+                cmd.Parameters.AddWithValue("@nome", aluno.nome_aluno);
+                cmd.Parameters.AddWithValue("@contato", aluno.contato_aluno);
+                cmd.Parameters.AddWithValue("@status", aluno.status_aluno);
+                cmd.Parameters.AddWithValue("@cpf", aluno.cpf_aluno);
+
+
+
+                cmd.ExecuteNonQuery();
                 vcon.Close();
-                return resposta;
-
+                MessageBox.Show("Novo aluno adicionado com sucesso");
             }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir aluno: " + ex.Message);
+                //throw ex
+            }
+
+
+        } // Fim do metodo novoaluno
+
+        public static bool AlunoExiste(Aluno aluno)
+        {
+            bool resposta;
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            var vcon = ConectarBanco();
+            var cmd = vcon.CreateCommand();
+            cmd.CommandText = "SELECT cpf_aluno FROM tb_aluno WHERE cpf_aluno ='" + aluno.cpf_aluno + "'";
+
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+            //O Data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                resposta = true;
+            }
+            else
+            {
+                resposta = false;
+            }
+
+            vcon.Close();
+            return resposta;
+
+        }
 
         public static DataTable ObterUserID()
         {
@@ -381,24 +382,73 @@ namespace ProjetoEscola1
                 da.Fill(dt);
                 vcon.Close();
                 return dt;
-            }    
-            
-            catch (Exception ex)
-             {
-               throw ex; 
+            }
 
-                }
+            catch (Exception ex)
+            {
+                throw ex;
+
             }
         }
 
 
+        public static DataTable ObterDadosPorId(string id)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+
+                cmd.CommandText = "SELECT * FROM tb_usuario WHERE id_usuario =" + id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
 
 
+        }
 
+        public static DataTable AtualizarUsuario(Usuario user)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
 
+                cmd.CommandText = "UPDATE tb_usuarios SET nome_usuario='" + user.nome_usuario + "',username_usuario='" + user.username_usuario + "',senha_usuario='" + user.senha_usuario + "',status_usuario='" + user.status_usuario + "',nivel_usuario=" + user.nivel_usuario + " WHERE id_usuario=" + user.id_usuario;
 
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
+}
+
+
+
+
+
+    
 
 
    

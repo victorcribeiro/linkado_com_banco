@@ -36,9 +36,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dgv_usuario = new System.Windows.Forms.DataGridView();
-            this.cb_gerenciamento = new System.Windows.Forms.ComboBox();
+            this.cb_status = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.bt_atualizar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -46,9 +46,9 @@
             this.tb_nome = new System.Windows.Forms.TextBox();
             this.tb_username = new System.Windows.Forms.TextBox();
             this.tb_senha = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nud_nivel = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_nivel)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -131,16 +131,16 @@
             this.dgv_usuario.TabIndex = 7;
             this.dgv_usuario.SelectionChanged += new System.EventHandler(this.dgv_usuario_SelectionChanged);
             // 
-            // cb_gerenciamento
+            // cb_status
             // 
-            this.cb_gerenciamento.FormattingEnabled = true;
-            this.cb_gerenciamento.Items.AddRange(new object[] {
+            this.cb_status.FormattingEnabled = true;
+            this.cb_status.Items.AddRange(new object[] {
             "A",
             "B"});
-            this.cb_gerenciamento.Location = new System.Drawing.Point(12, 267);
-            this.cb_gerenciamento.Name = "cb_gerenciamento";
-            this.cb_gerenciamento.Size = new System.Drawing.Size(121, 21);
-            this.cb_gerenciamento.TabIndex = 8;
+            this.cb_status.Location = new System.Drawing.Point(12, 267);
+            this.cb_status.Name = "cb_status";
+            this.cb_status.Size = new System.Drawing.Size(121, 21);
+            this.cb_status.TabIndex = 8;
             // 
             // button1
             // 
@@ -152,15 +152,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // bt_atualizar
             // 
-            this.button2.Location = new System.Drawing.Point(159, 415);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Salvar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.bt_atualizar.Location = new System.Drawing.Point(159, 415);
+            this.bt_atualizar.Name = "bt_atualizar";
+            this.bt_atualizar.Size = new System.Drawing.Size(75, 23);
+            this.bt_atualizar.TabIndex = 10;
+            this.bt_atualizar.Text = "Atualizar";
+            this.bt_atualizar.UseVisualStyleBackColor = true;
+            this.bt_atualizar.Click += new System.EventHandler(this.bt_atualizar_Click);
             // 
             // button3
             // 
@@ -219,19 +219,19 @@
             this.tb_senha.Size = new System.Drawing.Size(250, 20);
             this.tb_senha.TabIndex = 17;
             // 
-            // numericUpDown1
+            // nud_nivel
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(159, 268);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 18;
+            this.nud_nivel.Location = new System.Drawing.Point(159, 268);
+            this.nud_nivel.Name = "nud_nivel";
+            this.nud_nivel.Size = new System.Drawing.Size(120, 20);
+            this.nud_nivel.TabIndex = 18;
             // 
             // F_gerenciaamentouser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 450);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nud_nivel);
             this.Controls.Add(this.tb_senha);
             this.Controls.Add(this.tb_username);
             this.Controls.Add(this.tb_nome);
@@ -239,9 +239,9 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.bt_atualizar);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.cb_gerenciamento);
+            this.Controls.Add(this.cb_status);
             this.Controls.Add(this.dgv_usuario);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -254,7 +254,7 @@
             this.Text = "F_gerenciaamentouser";
             this.Load += new System.EventHandler(this.F_gerenciaamentouser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_nivel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,9 +270,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgv_usuario;
-        private System.Windows.Forms.ComboBox cb_gerenciamento;
+        private System.Windows.Forms.ComboBox cb_status;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button bt_atualizar;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
@@ -280,6 +280,8 @@
         private System.Windows.Forms.TextBox tb_nome;
         private System.Windows.Forms.TextBox tb_username;
         private System.Windows.Forms.TextBox tb_senha;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nud_nivel;
+
+
     }
 }

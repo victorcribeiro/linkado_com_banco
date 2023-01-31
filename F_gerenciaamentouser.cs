@@ -41,16 +41,57 @@ namespace ProjetoEscola1
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //obter a linha selecionada no DGV
-            int linha = dgv_usuario.SelectedRows[0];
-
-
-        }
 
         private void dgv_usuario_SelectionChanged(object sender, EventArgs e)
         {
+            DataGridView dvg = sender as DataGridView;
+            int qtdLinhas = dvg.SelectedRows .Count;
+            // Realize o procedimento caso tenha ao menos uma linha selecionada
+
+            if (qtdLinhas > 0 )
+            {
+                DataTable dt = new DataTable();
+
+                // O dado da coluna indice 0 é o Id do usuário
+                string userId= dvg.SelectedRows[0].Cells[0].Value.ToString();
+                dt = Banco_de_dados.ObterDadosPorId(userId);
+
+                tb_id.Text = dt.Rows[0].Field<Int64>("id_usuario").ToString();
+                tb_nome.Text = dt.Rows[0].Field<string>("nome_usuario").ToString();
+                tb_username.Text = dt.Rows[0].Field<string>("username_usuario").ToString();
+                tb_senha.Text = dt.Rows[0].Field<string>("senha_usuario").ToString();
+                cb_status.Text = dt.Rows[0].Field<string>("status_usuario").ToString();
+                nud_nivel.Text = dt.Rows[0].Field<Int64>("nivel_usuario").ToString();
+
+
+            }
+        }
+
+        private void bt_atualizar_Click(object sender, EventArgs e)
+        {
+            //obter a linha selecionada no DGV
+            int linha = dgv_usuario.SelectedRows[0].Index;
+
+            Usuario user = new Usuario();
+            user.id_usuario = Convert.ToInt32(tb_id.Text);
+            user.nome_usuario = tb_nome.Text;
+            user.username_usuario= tb_username.Text;
+            user.senha_usuario = tb_senha.Text;
+            user.status_usuario = cb_status.Text;
+            user.nivel_usuario = Convert.ToInt32(Math.Round(nud_nivel.Value,0));
+            //Invocar o método
+            Banco_de_dados.AtualizarUsuario(user);
+
+            //Atualizar o DVG com os dados atuais
+            //dgv_usuario.DataSource = banco.ObterUserID();
+            //Setar a linha selecionada anteriormente
+            //dgv_usuario.CurrentCell = dgv_usuario[0, linha];
+            // Outra forma de fazer a mesma coisa sem carregar todos os dados
+            dgv_usuario[1, linha].Value = tb_nome.Text;
+
+
+
+
 
         }
     }
