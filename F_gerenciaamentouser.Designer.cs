@@ -118,6 +118,8 @@
             // 
             this.dgv_usuario.AllowUserToAddRows = false;
             this.dgv_usuario.AllowUserToDeleteRows = false;
+            this.dgv_usuario.AllowUserToResizeColumns = false;
+            this.dgv_usuario.AllowUserToResizeRows = false;
             this.dgv_usuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_usuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgv_usuario.EnableHeadersVisualStyles = false;
@@ -170,6 +172,7 @@
             this.button3.TabIndex = 11;
             this.button3.Text = "Limpar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -179,6 +182,7 @@
             this.button4.TabIndex = 12;
             this.button4.Text = "Excluir";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -188,6 +192,7 @@
             this.button5.TabIndex = 13;
             this.button5.Text = "Fechar";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // tb_id
             // 

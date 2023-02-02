@@ -43,6 +43,7 @@ namespace ProjetoEscola1
 
             if (dt.Rows.Count == 1)
             {
+                f_login.label2.Text = dt.Rows[0].ItemArray[1].ToString();
                 f_login.label4.Text = dt.Rows[0].ItemArray[5].ToString();
                 f_login.pictureBox_login.Image = Properties.Resources.bverde;
 

@@ -99,6 +99,24 @@
     <Compile Include="F_gerenciaamentouser.Designer.cs">
       <DependentUpon>F_gerenciaamentouser.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_gerenciamanetoprofessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_gerenciamanetoprofessor.Designer.cs">
+      <DependentUpon>F_gerenciamanetoprofessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_gerenciamentocurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_gerenciamentocurso.Designer.cs">
+      <DependentUpon>F_gerenciamentocurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_gerencimeamentoaluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_gerencimeamentoaluno.Designer.cs">
+      <DependentUpon>F_gerencimeamentoaluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +148,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_gerenciaamentouser.resx">
       <DependentUpon>F_gerenciaamentouser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_gerenciamanetoprofessor.resx">
+      <DependentUpon>F_gerenciamanetoprofessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_gerenciamentocurso.resx">
+      <DependentUpon>F_gerenciamentocurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_gerencimeamentoaluno.resx">
+      <DependentUpon>F_gerencimeamentoaluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>

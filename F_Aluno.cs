@@ -25,7 +25,7 @@ namespace ProjetoEscola1
         private void button1_Click(object sender, EventArgs e)
         {
             tb_nome.Text = null;
-            tb_contato = null;
+            tb_contato.Text = null;
             tb_cpf.Text = null;
             cb_status.Text = null;
         }

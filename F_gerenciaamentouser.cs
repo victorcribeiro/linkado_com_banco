@@ -45,7 +45,7 @@ namespace ProjetoEscola1
         private void dgv_usuario_SelectionChanged(object sender, EventArgs e)
         {
             DataGridView dvg = sender as DataGridView;
-            int qtdLinhas = dvg.SelectedRows .Count;
+            int qtdLinhas = dvg.SelectedRows.Count;
             // Realize o procedimento caso tenha ao menos uma linha selecionada
 
             if (qtdLinhas > 0 )
@@ -93,6 +93,37 @@ namespace ProjetoEscola1
 
 
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult resposta = MessageBox.Show("Confirmar Exclusão ?", "Excluir Usuário", MessageBoxButtons.YesNo);
+
+
+            if (resposta == DialogResult.Yes)
+            {
+                Banco_de_dados.RemoverUsuario(tb_id.Text);
+                // Para evitar carregar o banco de dados novamente podemos atualizar o dgv diretamente
+                dgv_usuario.Rows.Remove(dgv_usuario.CurrentRow);
+
+
+
+
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tb_nome.Text = null;
+            tb_username = null;
+            tb_senha.Text = null;
+            cb_status.Text = null;
+            nud_nivel.Text = null;
         }
     }
 }

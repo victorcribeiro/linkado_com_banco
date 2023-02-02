@@ -70,7 +70,9 @@ namespace ProjetoEscola1
 
         private void gerenciarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+            F_gerencimeamentoaluno f_gerenciamentoaluno = new F_gerencimeamentoaluno();
+            f_gerenciamentoaluno.ShowDialog();
+
         }
 
         private void gerenciamentoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,6 +98,18 @@ namespace ProjetoEscola1
 
             }
 
+        }
+
+        private void gerenciarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            F_gerenciamentoprofessor f_gerenciamentoprofessor = new F_gerenciamentoprofessor();
+            f_gerenciamentoprofessor.ShowDialog();
+        }
+
+        private void gerenciarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_gerenciamentocurso f_gerencimentocurso = new F_gerenciamentocurso();
+            f_gerencimentocurso.ShowDialog();
         }
     } 
 }
